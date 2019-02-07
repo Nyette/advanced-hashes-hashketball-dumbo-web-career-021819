@@ -1,4 +1,4 @@
-# Write your code here!
+require 'pry'
 
 def game_hash
   game_hash = {
@@ -186,3 +186,13 @@ def big_shoe_rebounds
   end
 end
 
+def get_player_from_number(number)
+  # get_player_from_number(33) returns "Brendan Haywood"
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |name, stats|
+      if stats[:number] == number
+        name
+      end
+    end  
+  end
+end
